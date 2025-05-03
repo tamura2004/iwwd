@@ -1,0 +1,782 @@
+[
+  {
+    "color": "白",
+    "cost": "白白",
+    "name": "リサイクル工場",
+    "number": 7.0,
+    "discard": "白",
+    "bonus": null,
+    "production": "白白",
+    "score": null
+  },
+  {
+    "color": "白",
+    "cost": "白白",
+    "name": "風力発電所",
+    "number": 7.0,
+    "discard": "黒",
+    "bonus": null,
+    "production": "黒",
+    "score": null
+  },
+  {
+    "color": "白",
+    "cost": "白白白",
+    "name": "輸送網",
+    "number": 2.0,
+    "discard": "白",
+    "bonus": null,
+    "production": null,
+    "score": "黒カード×1"
+  },
+  {
+    "color": "白",
+    "cost": "白白白黒",
+    "name": "軍事基地",
+    "number": 6.0,
+    "discard": "白",
+    "bonus": "将",
+    "production": "白緑",
+    "score": null
+  },
+  {
+    "color": "白",
+    "cost": "白白白黒",
+    "name": "工業団地",
+    "number": 6.0,
+    "discard": "黄",
+    "bonus": "投",
+    "production": "白黄",
+    "score": null
+  },
+  {
+    "color": "白",
+    "cost": "白白白黒",
+    "name": "研究施設",
+    "number": 7.0,
+    "discard": "緑",
+    "bonus": null,
+    "production": "緑緑",
+    "score": null
+  },
+  {
+    "color": "白",
+    "cost": "白白白青",
+    "name": "原油採掘",
+    "number": 5.0,
+    "discard": "黒",
+    "bonus": "投",
+    "production": "黒黄",
+    "score": null
+  },
+  {
+    "color": "白",
+    "cost": "白白白白黒",
+    "name": "金融取引所",
+    "number": 5.0,
+    "discard": "黄",
+    "bonus": "投",
+    "production": "黄黄",
+    "score": null
+  },
+  {
+    "color": "白",
+    "cost": "白白白白緑",
+    "name": "原子力発電所",
+    "number": 5.0,
+    "discard": "黒",
+    "bonus": null,
+    "production": "黒黒黒",
+    "score": null
+  },
+  {
+    "color": "黒",
+    "cost": "黒黒",
+    "name": "飛行船",
+    "number": 6.0,
+    "discard": "青",
+    "bonus": null,
+    "production": "青",
+    "score": null
+  },
+  {
+    "color": "黒",
+    "cost": "白黒黒",
+    "name": "機甲師団",
+    "number": 7.0,
+    "discard": "白",
+    "bonus": "将",
+    "production": "青",
+    "score": null
+  },
+  {
+    "color": "黒",
+    "cost": "白黒黒",
+    "name": "巨大掘削機",
+    "number": 4.0,
+    "discard": "白",
+    "bonus": null,
+    "production": "白青",
+    "score": null
+  },
+  {
+    "color": "黒",
+    "cost": "黒黒黒",
+    "name": "空挺研究所",
+    "number": 3.0,
+    "discard": "緑",
+    "bonus": null,
+    "production": "緑青",
+    "score": null
+  },
+  {
+    "color": "黒",
+    "cost": "黒黒黒緑",
+    "name": "砕氷船",
+    "number": 4.0,
+    "discard": "青",
+    "bonus": null,
+    "production": "青青",
+    "score": null
+  },
+  {
+    "color": "黒",
+    "cost": "白白黒黒黒",
+    "name": "潜水艦",
+    "number": 3.0,
+    "discard": "白",
+    "bonus": "将",
+    "production": "青青",
+    "score": null
+  },
+  {
+    "color": "黒",
+    "cost": "黒黒黒緑緑",
+    "name": "飛行戦隊",
+    "number": 2.0,
+    "discard": "緑",
+    "bonus": null,
+    "production": "青青青",
+    "score": null
+  },
+  {
+    "color": "黒",
+    "cost": "白白白黒黒黒黒",
+    "name": "空母",
+    "number": 1.0,
+    "discard": "白",
+    "bonus": "将将",
+    "production": "青×黒カード数",
+    "score": null
+  },
+  {
+    "color": "黒",
+    "cost": "白白白黒黒黒赤",
+    "name": "ジャガーノート",
+    "number": 1.0,
+    "discard": "白",
+    "bonus": "将将",
+    "production": "青青",
+    "score": "黒カード×1"
+  },
+  {
+    "color": "緑",
+    "cost": "黒緑緑",
+    "name": "機械動物",
+    "number": 1.0,
+    "discard": "黒",
+    "bonus": "将",
+    "production": "白",
+    "score": "2"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑",
+    "name": "家庭用ロボット",
+    "number": 1.0,
+    "discard": "白",
+    "bonus": null,
+    "production": "白×白カード数",
+    "score": "1"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑",
+    "name": "神経科学",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": null,
+    "production": "緑×緑カード数",
+    "score": "1"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑",
+    "name": "万能ワクチン",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": null,
+    "score": "黄カード×1"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑黄",
+    "name": "ヒトクローン",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": "投",
+    "production": "黄",
+    "score": "1"
+  },
+  {
+    "color": "緑",
+    "cost": "黒黒緑緑",
+    "name": "大量破壊兵器",
+    "number": 1.0,
+    "discard": "黒",
+    "bonus": "将将",
+    "production": null,
+    "score": "3"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑",
+    "name": "遺伝子改良",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": "投投",
+    "production": null,
+    "score": "3"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑",
+    "name": "スーパーコンピュータ",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": null,
+    "production": "緑",
+    "score": "黒カード×1"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑",
+    "name": "超音波探査",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": null,
+    "production": "青×黒カード数",
+    "score": "1"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑緑",
+    "name": "高性能義肢",
+    "number": 1.0,
+    "discard": "白",
+    "bonus": "将",
+    "production": "白白",
+    "score": "4"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑緑",
+    "name": "量子発電機",
+    "number": 1.0,
+    "discard": "黒",
+    "bonus": null,
+    "production": "黒黒黒",
+    "score": "黒カード×1"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑緑",
+    "name": "気候制御",
+    "number": 1.0,
+    "discard": "黒",
+    "bonus": null,
+    "production": "黒黒黄",
+    "score": "2"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑緑",
+    "name": "仮想現実",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": "黄×緑カード数",
+    "score": "2"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑黄",
+    "name": "ロボット警備員",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": null,
+    "score": "将軍×1"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑黄黄",
+    "name": "物質変換",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": "赤",
+    "production": "黄黄黄",
+    "score": "1"
+  },
+  {
+    "color": "緑",
+    "cost": "黒黒緑緑緑緑",
+    "name": "人工衛星",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": "将",
+    "production": "青青",
+    "score": "3"
+  },
+  {
+    "color": "緑",
+    "cost": "黒緑緑緑緑赤",
+    "name": "重力反転装置",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": "投",
+    "production": null,
+    "score": "黄カード×2"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑黄黄",
+    "name": "養殖",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": "投",
+    "production": null,
+    "score": "投資家×1"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑緑緑緑",
+    "name": "人体冷凍保存技術",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": "投",
+    "production": null,
+    "score": "投資家×1"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑緑緑緑",
+    "name": "スーパーソルジャー",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": "将",
+    "production": null,
+    "score": "将軍×1"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑緑緑緑緑",
+    "name": "瞬間移動",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": "赤赤",
+    "production": null,
+    "score": "8"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑緑緑緑赤",
+    "name": "未知の技術",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": null,
+    "production": null,
+    "score": "緑カード×3"
+  },
+  {
+    "color": "緑",
+    "cost": "緑緑緑緑緑赤赤赤",
+    "name": "タイムトラベル",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": null,
+    "production": null,
+    "score": "15"
+  },
+  {
+    "color": "黄",
+    "cost": "緑黄黄",
+    "name": "大学",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": null,
+    "production": "緑×黄カード数",
+    "score": "2"
+  },
+  {
+    "color": "黄",
+    "cost": "黄黄黄",
+    "name": "プロパガンダセンター",
+    "number": 2.0,
+    "discard": "黄",
+    "bonus": "将",
+    "production": "黄×黄カード数",
+    "score": "1"
+  },
+  {
+    "color": "黄",
+    "cost": "黄黄黄",
+    "name": "博物館",
+    "number": 2.0,
+    "discard": "青",
+    "bonus": null,
+    "production": null,
+    "score": "青カード×2"
+  },
+  {
+    "color": "黄",
+    "cost": "黒黒黄黄",
+    "name": "諜報機関",
+    "number": 2.0,
+    "discard": "青",
+    "bonus": null,
+    "production": "青青",
+    "score": "1"
+  },
+  {
+    "color": "黄",
+    "cost": "黄黄黄赤",
+    "name": "秘密結社",
+    "number": 2.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": null,
+    "score": "投資家×1"
+  },
+  {
+    "color": "黄",
+    "cost": "白白黄黄黄",
+    "name": "機密研究所",
+    "number": 2.0,
+    "discard": "緑",
+    "bonus": "赤",
+    "production": "緑緑",
+    "score": "緑カード×1"
+  },
+  {
+    "color": "黄",
+    "cost": "白白白黄黄",
+    "name": "巨大ダム",
+    "number": 1.0,
+    "discard": "黒",
+    "bonus": null,
+    "production": "黒黒黒黒",
+    "score": "1"
+  },
+  {
+    "color": "黄",
+    "cost": "黒黒緑黄黄",
+    "name": "海底都市",
+    "number": 2.0,
+    "discard": "青",
+    "bonus": null,
+    "production": "緑青青",
+    "score": "3"
+  },
+  {
+    "color": "黄",
+    "cost": "黒緑黄黄黄",
+    "name": "リニアモーターカー",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": "投投",
+    "production": "黄×白カード数",
+    "score": "2"
+  },
+  {
+    "color": "黄",
+    "cost": "黄黄黄黄黄",
+    "name": "港湾区域",
+    "number": 2.0,
+    "discard": "黄",
+    "bonus": "投投",
+    "production": "白白黄黄",
+    "score": "2"
+  },
+  {
+    "color": "黄",
+    "cost": "黄黄黄投投",
+    "name": "国際博覧会",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": null,
+    "score": "緑カード×3"
+  },
+  {
+    "color": "黄",
+    "cost": "白白白黄黄黄",
+    "name": "地底都市",
+    "number": 2.0,
+    "discard": "黒",
+    "bonus": "赤",
+    "production": "白白黒黒",
+    "score": "3"
+  },
+  {
+    "color": "黄",
+    "cost": "白白黄黄黄投",
+    "name": "巨大タワー",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": null,
+    "score": "10"
+  },
+  {
+    "color": "黄",
+    "cost": "黒黒黒緑黄黄",
+    "name": "軌道エレベータ",
+    "number": 1.0,
+    "discard": "黒",
+    "bonus": "投",
+    "production": null,
+    "score": "投資家×1"
+  },
+  {
+    "color": "黄",
+    "cost": "黒黒緑黄黄黄",
+    "name": "ソーラーキャノン",
+    "number": 1.0,
+    "discard": "黒",
+    "bonus": "将",
+    "production": null,
+    "score": "将軍×1"
+  },
+  {
+    "color": "黄",
+    "cost": "黒黒黒黄黄黄黄",
+    "name": "カジノシティ",
+    "number": 2.0,
+    "discard": "黄",
+    "bonus": "投",
+    "production": "黄黄",
+    "score": "投資家×1"
+  },
+  {
+    "color": "黄",
+    "cost": "黒黒黒黄黄黄黄",
+    "name": "北極基地",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": "将",
+    "production": "青青青",
+    "score": "青カード×2"
+  },
+  {
+    "color": "黄",
+    "cost": "黒黒緑緑黄黄赤",
+    "name": "月面基地",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": "将将",
+    "production": null,
+    "score": "10"
+  },
+  {
+    "color": "黄",
+    "cost": "白白白白白黄黄黄",
+    "name": "国定史跡",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": null,
+    "score": "黄カード×2"
+  },
+  {
+    "color": "黄",
+    "cost": "黄黄黄黄黄黄投投",
+    "name": "国際会議",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": null,
+    "score": "黄カード×3"
+  },
+  {
+    "color": "青",
+    "cost": "青青青",
+    "name": "黒ひげの財宝",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": "黄青",
+    "score": "2"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青",
+    "name": "ソロモン王の洞窟",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": "黄×白カード数",
+    "score": "2"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青",
+    "name": "黄金都市",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": "黄黄黄",
+    "score": "3"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青",
+    "name": "バミューダトライアングル",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": "赤",
+    "production": "緑",
+    "score": "4"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青",
+    "name": "契約の箱",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": "赤",
+    "production": null,
+    "score": "5"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青青",
+    "name": "テンプル騎士団の財宝",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": "赤赤",
+    "production": "黄黄",
+    "score": "3"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青青",
+    "name": "ヘスペリデスの園",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": null,
+    "production": null,
+    "score": "黄カード×2"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青青",
+    "name": "アヴァロン島",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": null,
+    "production": "緑",
+    "score": "7"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青赤",
+    "name": "地底都市アガルタ",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": null,
+    "production": "青青",
+    "score": "将軍×1"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青青青",
+    "name": "ロズウェルの宇宙人",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": "将",
+    "production": "緑",
+    "score": "将軍×1"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青青青",
+    "name": "失われたムー大陸",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": "赤赤",
+    "production": "黄",
+    "score": "青カード×2"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青青青青",
+    "name": "若返りの泉",
+    "number": 1.0,
+    "discard": "黒",
+    "bonus": "赤赤赤",
+    "production": null,
+    "score": "将軍×1"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青青青青",
+    "name": "アレキサンダー大王の墓",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": "将将",
+    "production": null,
+    "score": "10"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青青青将",
+    "name": "古代宇宙飛行士",
+    "number": 1.0,
+    "discard": "緑",
+    "bonus": "赤赤",
+    "production": "緑×青カード数",
+    "score": "10"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青青将将",
+    "name": "センター・オブ・ジ・アース",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": null,
+    "production": null,
+    "score": "15"
+  },
+  {
+    "color": "青",
+    "cost": "青青青青青青青赤",
+    "name": "アトランティス大陸",
+    "number": 1.0,
+    "discard": "黄",
+    "bonus": null,
+    "production": null,
+    "score": "将軍×2"
+  },
+  {
+    "color": "青",
+    "cost": "緑緑緑青青青青将",
+    "name": "パラレルワールド",
+    "number": 1.0,
+    "discard": "青",
+    "bonus": "赤赤赤",
+    "production": null,
+    "score": "緑カード×3"
+  }
+]

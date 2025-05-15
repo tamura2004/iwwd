@@ -9,6 +9,7 @@ import { Area } from "../types/Area.ts";
 import { Production } from "../types/Production.ts";
 import { showColorVector } from "../types/ColorVector.ts";
 import { Color } from "../types/Color.ts";
+import { Score } from "../types/Score.ts";
 
 export type Card = {
   color: Color;
@@ -18,7 +19,7 @@ export type Card = {
   discard: string;
   bonus: string | null;
   production: Production;
-  score: string | null;
+  score: Score;
   serialNumber: string;
   area: Area;
 };
@@ -110,7 +111,8 @@ export const Card = ({ card, animate, payCost }: Props) => {
               width: "100%",
             }}
           >
-            {card.score}
+            {card.score.multiplier && `${card.score.multiplier}カードx`}
+            {card.score.baseScore}
           </Box>
           <hr style={{ width: "100%" }} />
           <Box

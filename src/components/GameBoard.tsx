@@ -23,6 +23,7 @@ export const GameBoard = () => {
     constructionCards,
     dealCards,
     production,
+    score,
   } = useDeck();
 
   const sensors = useSensors(
@@ -81,7 +82,7 @@ export const GameBoard = () => {
           }
         }}
       >
-        <ConstructedArea production={production} />
+        <ConstructedArea production={production} score={score}/>
         <ConstructionArea cards={constructionCards} payCost={payCost} />
         <DraftArea cards={draftCards} payCost={payCost} />
         <HandArea

@@ -4,9 +4,10 @@ import { Color, getColor, getFontColor } from "../types/Color.ts";
 type Props = {
   color: Color;
   value: number;
+  borderRadius?: number;
 };
 
-export const ProductionPanel = ({ color, value }: Props) => {
+export const ProductionPanel = ({ color, value, borderRadius }: Props) => {
   const bgcolor = getColor(color);
   const fontColor = getFontColor(color);
   const borderColor = color === Color.White ? "black" : bgcolor;
@@ -15,7 +16,7 @@ export const ProductionPanel = ({ color, value }: Props) => {
       sx={{
         m: 1,
         p: 2,
-        borderRadius: 1,
+        borderRadius: borderRadius ?? 1,
         fontSize: 18,
         bgcolor,
         color: fontColor,

@@ -6,6 +6,7 @@ import { isColor, Color } from "../types/Color.ts";
 import { Area } from "../types/Area.ts";
 import { readProduction } from "../types/Production.ts";
 import { emptyColorVector } from "../types/ColorVector.ts";
+import { readScore } from "../types/Score.ts";
 
 const shuffleArray = <T>(array: T[]): T[] => {
   const shuffled = [...array]; // Create a copy of the array to avoid mutating the original
@@ -26,6 +27,7 @@ const createDeck = (): Card[] => {
       const color = card.color as Color;
       if (isColor(color)) {
         const production = readProduction(card.production);
+        const score = readScore(card.score);
         deck.push({
           ...card,
           serialNumber: serialNumber,
@@ -33,6 +35,7 @@ const createDeck = (): Card[] => {
           area: Area.Deck,
           color,
           production,
+          score,
         });
       }
     }
@@ -93,12 +96,11 @@ export const useDeck = () => {
   const constructedCards = cards.filter(
     (card) => card.area === Area.Constructed,
   );
+  const structureColors = constructedCards.reduce((acc, card) => {
+    return {...acc, [card.color]: acc[card.color] + 1}
+  }, emptyColorVector());
 
   const production = useMemo(() => {
-    const structureColors = emptyColorVector();
-    for (const card of constructedCards) {
-      structureColors[card.color]++;
-    }
     const productionColors = emptyColorVector();
     productionColors[Color.White] = 2;
     productionColors[Color.Black] = 1;
@@ -123,7 +125,15 @@ export const useDeck = () => {
       }
     }
     return productionColors;
-  }, [constructedCards]);
+  }, [constructedCards, structureColors]);
+
+  const score = constructedCards.reduce((acc, card) => {
+    const { baseScore, multiplier } = card.score
+    if (multiplier != null) {
+      return acc + baseScore;
+    }
+    return acc + baseScore * structureColors[card.color]
+  }, 0);
 
   return {
     moveCard,
@@ -134,5 +144,6 @@ export const useDeck = () => {
     constructedCards,
     dealCards,
     production,
+    score,
   };
 };

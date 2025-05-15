@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useDroppable } from "@dnd-kit/core";
-import { ColorVector, showColorVector } from "../types/ColorVector.ts";
-import { Resources } from "./Resource.tsx";
+import { ColorVector } from "../types/ColorVector.ts";
+import {ProductionPanelRow} from "./ProductionPanelRow.tsx";
 
 type Props = {
   production: ColorVector;
@@ -13,7 +13,7 @@ export const ConstructedArea = ({ production }: Props) => {
     <Box
       ref={setNodeRef}
       sx={{
-        height: "4vh",
+        height: "6vh",
         backgroundColor: isOver ? "lightgreen" : undefined,
         display: "flex",
         flexWrap: "wrap",
@@ -23,7 +23,7 @@ export const ConstructedArea = ({ production }: Props) => {
         border: "1px solid darkblue",
       }}
     >
-      <Resources str={showColorVector(production)} />
+      <ProductionPanelRow colorVector={production} />
     </Box>
   );
 };

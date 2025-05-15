@@ -3,12 +3,12 @@ import { grey } from "@mui/material/colors";
 import {
   getColor,
   getFontColor,
-  isResourceColor,
-  ResourceColor,
-} from "../models/ResourceColor.ts";
+  isColor,
+  Color,
+} from "../types/Color.ts";
 
 type Props = {
-  color: ResourceColor;
+  color: Color;
   checked?: boolean;
   onClick?: () => void;
 };
@@ -40,9 +40,10 @@ export const Resource = (props: Props) => {
 
 type ResourceCubesProps = {
   str: string | null;
+  multiplier?: string;
 };
 
-export const Resources = ({ str }: ResourceCubesProps) => {
+export const Resources = ({ str, multiplier }: ResourceCubesProps) => {
   if (str == null) {
     return null;
   }
@@ -51,11 +52,12 @@ export const Resources = ({ str }: ResourceCubesProps) => {
   return (
     <Box sx={{ display: "flex", gap: "2px", flexFlow: "row wrap" }}>
       {resources.map((color, index) => {
-        if (isResourceColor(color) === false) {
+        if (isColor(color) === false) {
           return null;
         }
         return <Resource key={index} color={color} />;
       })}
+      {multiplier && <Box>x{multiplier}カード数</Box>}
     </Box>
   );
 };

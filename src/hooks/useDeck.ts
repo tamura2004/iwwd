@@ -1,9 +1,10 @@
 import { useState } from "react";
 import Cards from "../assets/cards.json";
 import { Card } from "../components/Card.tsx";
-import { addPayedCost, createCost } from "../models/Cost.ts";
-import { ResourceColor } from "../models/ResourceColor.ts";
-import { Area } from "../models/Area.ts"; // Assuming you have a JSON file with card data
+import { addPayedCost, readCost } from "../types/Cost.ts";
+import { isColor, Color } from "../types/Color.ts";
+import { Area } from "../types/Area.ts";
+import { readProduction } from "../types/Production.ts";
 
 const shuffleArray = <T>(array: T[]): T[] => {
   const shuffled = [...array]; // Create a copy of the array to avoid mutating the original
@@ -20,8 +21,19 @@ const createDeck = (): Card[] => {
   for (const card of Cards) {
     for (let i = 0; i < card.number; i++) {
       const serialNumber = `${card.name}_${i}`;
-      const cost = createCost(Array.from(card.cost ?? "") as ResourceColor[]);
-      deck.push({ ...card, serialNumber: serialNumber, cost, area: Area.Deck });
+      const cost = readCost(card.cost);
+      const color = card.color as Color;
+      if (isColor(color)) {
+        const production = readProduction(card.production);
+        deck.push({
+          ...card,
+          serialNumber: serialNumber,
+          cost,
+          area: Area.Deck,
+          color,
+          production,
+        });
+      }
     }
   }
 
@@ -60,7 +72,7 @@ export const useDeck = () => {
     );
   };
 
-  const payCost = (card: Card, color: ResourceColor, pay: number) => {
+  const payCost = (card: Card, color: Color, pay: number) => {
     setCards((prev) =>
       prev.map((_card) => {
         if (_card.serialNumber === card.serialNumber) {

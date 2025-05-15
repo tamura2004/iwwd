@@ -10,8 +10,8 @@ import { DraftArea } from "./DraftArea.tsx";
 import { HandArea } from "./HandArea.tsx";
 import { useDeck } from "../hooks/useDeck.ts";
 import { ConstructionArea } from "./ConstructionArea.tsx";
-import { Area } from "../models/Area.ts";
-import { isResourceColor } from "../models/ResourceColor.ts";
+import { Area } from "../types/Area.ts";
+import { isColor } from "../types/Color.ts";
 import {ConstructedArea} from "./ConstructedArea.tsx";
 
 export const GameBoard = () => {
@@ -71,7 +71,7 @@ export const GameBoard = () => {
               if (targetCard.area === Area.Construction) {
                 moveCard(card, Area.Discard);
                 const discard = card.discard;
-                if (isResourceColor(discard)) {
+                if (isColor(discard)) {
                   payCost(targetCard, discard, 1);
                 }
               }

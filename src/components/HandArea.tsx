@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
 import { Card } from "./Card.tsx";
-import { ResourceColor } from "../models/ResourceColor.ts";
+import { Color } from "../types/Color.ts";
 import { blue } from "@mui/material/colors";
 
 type Props = {
   handleDealCards: () => void;
   cards: Card[];
-  payCost: (card: Card, color: ResourceColor, pay: number) => void;
+  payCost: (card: Card, color: Color, pay: number) => void;
 };
 
 export const HandArea = ({ handleDealCards, cards, payCost }: Props) => {

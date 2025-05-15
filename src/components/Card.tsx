@@ -3,19 +3,21 @@ import { CSS } from "@dnd-kit/utilities";
 import { Box } from "@mui/material";
 import { Resources } from "./Resource.tsx";
 import { keyframes } from "@mui/material/styles";
-import { Cost } from "../models/Cost.ts";
+import { Cost } from "../types/Cost.ts";
 import { CardCost } from "./CardCost.tsx";
-import { Area } from "../models/Area.ts";
-import {ResourceColor} from "../models/ResourceColor.ts";
+import { Area } from "../types/Area.ts";
+import { Production } from "../types/Production.ts";
+import { showColorVector } from "../types/ColorVector.ts";
+import { Color } from "../types/Color.ts";
 
 export type Card = {
-  color: string;
+  color: Color;
   cost: Cost;
   name: string;
   number: number;
   discard: string;
   bonus: string | null;
-  production: string | null;
+  production: Production;
   score: string | null;
   serialNumber: string;
   area: Area;
@@ -24,14 +26,10 @@ export type Card = {
 type Props = {
   card: Card;
   animate?: boolean;
-  payCost: (card: Card, color: ResourceColor, pay: number) => void;
+  payCost: (card: Card, color: Color, pay: number) => void;
 };
 
-export const Card = ({card, animate, payCost}: Props) => {
-  console.log({
-    label: "DEBUG",
-    card,
-  })
+export const Card = ({ card, animate, payCost }: Props) => {
   const { setNodeRef, listeners, attributes, transform, isDragging } =
     useDraggable({ id: card.serialNumber, data: card });
   const { setNodeRef: setDroppableNodeRef, isOver } = useDroppable({
@@ -53,6 +51,9 @@ export const Card = ({card, animate, payCost}: Props) => {
       opacity: 1,
     },
   });
+
+  const { resources, multiplier } = card.production;
+  const production = showColorVector(resources);
 
   return (
     <div ref={setDroppableNodeRef}>
@@ -78,9 +79,7 @@ export const Card = ({card, animate, payCost}: Props) => {
             alignItems: "flex-start",
             fontSize: "12px",
             fontWeight: "bold",
-            animation: animate
-              ? `${deal} 0.5s ease-out forwards`
-              : undefined,
+            animation: animate ? `${deal} 0.5s ease-out forwards` : undefined,
             p: 1,
           }}
         >
@@ -117,11 +116,7 @@ export const Card = ({card, animate, payCost}: Props) => {
           <Box
             sx={{ display: "flex", justifyContent: "center", width: "100%" }}
           >
-            {card.production ? (
-              <Resources str={card.production} />
-            ) : (
-              "生産なし"
-            )}
+            <Resources str={production} multiplier={multiplier} />
           </Box>
         </Box>
       </div>

@@ -1,22 +1,19 @@
-import { Cost, Entries } from "../models/Cost.ts";
+import { Cost } from "../types/Cost.ts";
 import { Box } from "@mui/material";
 import { Resource } from "./Resource.tsx";
-import { ResourceColor } from "../models/ResourceColor.ts";
+import { Color } from "../types/Color.ts";
 import { Card } from "./Card.tsx";
+import {Entries} from "../types/Entries.ts";
 
 type Props = {
   card: Card;
-  payCost: (card: Card, color: ResourceColor, pay: number) => void;
+  payCost: (card: Card, color: Color, pay: number) => void;
 };
 
 const iota = (n: number) => [...Array(n)].map((_, i) => i);
 
 export const CardCost = ({ card, payCost }: Props) => {
   const entries = Object.entries(card.cost) as Entries<Cost>;
-   console.log({
-     payCost
-   })
-
   return (
     <Box sx={{ display: "flex", gap: "2px", flexFlow: "row wrap" }}>
       {entries.flatMap(([color, { needs, payed }]) => {

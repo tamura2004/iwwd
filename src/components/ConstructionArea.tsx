@@ -1,11 +1,11 @@
 import { Card } from "./Card.tsx";
 import { Box } from "@mui/material";
 import { useDroppable } from "@dnd-kit/core";
-import {ResourceColor} from "../models/ResourceColor.ts";
+import {Color} from "../types/Color.ts";
 
 type Props = {
   cards: Card[];
-  payCost: (card: Card, color: ResourceColor, pay: number) => void;
+  payCost: (card: Card, color: Color, pay: number) => void;
 };
 
 export const ConstructionArea = ({ cards, payCost }: Props) => {

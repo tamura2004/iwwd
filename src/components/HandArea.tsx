@@ -20,7 +20,7 @@ export const HandArea = ({ handleDealCards, cards, payCost }: Props) => {
         display: "flex",
         gap: 1,
       }}
-      onClick={handleDealCards}
+      onClick={() => cards.length === 0 && handleDealCards()}
     >
       {cards.map((card) => {
         return (

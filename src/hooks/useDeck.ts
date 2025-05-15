@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Cards from "../assets/cards.json";
 import { Card } from "../components/Card.tsx";
 import { addPayedCost, readCost } from "../types/Cost.ts";
 import { isColor, Color } from "../types/Color.ts";
 import { Area } from "../types/Area.ts";
 import { readProduction } from "../types/Production.ts";
+import { emptyColorVector } from "../types/ColorVector.ts";
 
 const shuffleArray = <T>(array: T[]): T[] => {
   const shuffled = [...array]; // Create a copy of the array to avoid mutating the original
@@ -93,6 +94,37 @@ export const useDeck = () => {
     (card) => card.area === Area.Constructed,
   );
 
+  const production = useMemo(() => {
+    const structureColors = emptyColorVector();
+    for (const card of constructedCards) {
+      structureColors[card.color]++;
+    }
+    const productionColors = emptyColorVector();
+    productionColors[Color.White] = 2;
+    productionColors[Color.Black] = 1;
+    productionColors[Color.Green] = 1;
+    for (const card of constructedCards) {
+      const { resources, multiplier } = card.production;
+      if (multiplier != null) {
+        if (isColor(multiplier)) {
+          for (const color of Object.keys(resources)) {
+            if (isColor(color)) {
+              productionColors[color] +=
+                structureColors[multiplier] * resources[color];
+            }
+          }
+        }
+      } else {
+        for (const color of Object.keys(resources)) {
+          if (isColor(color)) {
+            productionColors[color] += resources[color];
+          }
+        }
+      }
+    }
+    return productionColors;
+  }, [constructedCards]);
+
   return {
     moveCard,
     payCost,
@@ -101,5 +133,6 @@ export const useDeck = () => {
     constructionCards,
     constructedCards,
     dealCards,
+    production,
   };
 };

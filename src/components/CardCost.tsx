@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { Resource } from "./Resource.tsx";
 import { Color } from "../types/Color.ts";
 import { Card } from "./Card.tsx";
-import {Entries} from "../types/Entries.ts";
+import { Entries } from "../types/Entries.ts";
 
 type Props = {
   card: Card;

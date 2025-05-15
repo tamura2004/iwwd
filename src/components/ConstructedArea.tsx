@@ -1,20 +1,19 @@
-import { Card } from "./Card.tsx";
 import { Box } from "@mui/material";
 import { useDroppable } from "@dnd-kit/core";
-import { Color } from "../types/Color.ts";
+import { ColorVector, showColorVector } from "../types/ColorVector.ts";
+import { Resources } from "./Resource.tsx";
 
 type Props = {
-  cards: Card[];
-  payCost: (card: Card, color: Color, pay: number) => void;
+  production: ColorVector;
 };
 
-export const ConstructedArea = ({ cards, payCost }: Props) => {
+export const ConstructedArea = ({ production }: Props) => {
   const { setNodeRef, isOver } = useDroppable({ id: "constructedArea" });
   return (
     <Box
       ref={setNodeRef}
       sx={{
-        height: "16vh",
+        height: "4vh",
         backgroundColor: isOver ? "lightgreen" : undefined,
         display: "flex",
         flexWrap: "wrap",
@@ -24,9 +23,7 @@ export const ConstructedArea = ({ cards, payCost }: Props) => {
         border: "1px solid darkblue",
       }}
     >
-      {cards.map((card, index) => {
-        return <Card card={card} payCost={payCost} key={index} />;
-      })}
+      <Resources str={showColorVector(production)} />
     </Box>
   );
 };

@@ -12,7 +12,7 @@ import { useDeck } from "../hooks/useDeck.ts";
 import { ConstructionArea } from "./ConstructionArea.tsx";
 import { Area } from "../types/Area.ts";
 import { isColor } from "../types/Color.ts";
-import {ConstructedArea} from "./ConstructedArea.tsx";
+import { ConstructedArea } from "./ConstructedArea.tsx";
 
 export const GameBoard = () => {
   const {
@@ -21,8 +21,8 @@ export const GameBoard = () => {
     handCards,
     draftCards,
     constructionCards,
-    constructedCards,
     dealCards,
+    production,
   } = useDeck();
 
   const sensors = useSensors(
@@ -68,7 +68,10 @@ export const GameBoard = () => {
               moveCard(card, Area.Constructed);
               break;
             default:
-              if (targetCard.area === Area.Construction) {
+              if (
+                targetCard.area === Area.Construction &&
+                card.area === Area.Draft
+              ) {
                 moveCard(card, Area.Discard);
                 const discard = card.discard;
                 if (isColor(discard)) {
@@ -78,10 +81,14 @@ export const GameBoard = () => {
           }
         }}
       >
-        <ConstructedArea cards={constructedCards} payCost={payCost} />
+        <ConstructedArea production={production} />
         <ConstructionArea cards={constructionCards} payCost={payCost} />
         <DraftArea cards={draftCards} payCost={payCost} />
-        <HandArea handleDealCards={dealCards} cards={handCards} payCost={payCost} />
+        <HandArea
+          handleDealCards={dealCards}
+          cards={handCards}
+          payCost={payCost}
+        />
       </DndContext>
     </Box>
   );
